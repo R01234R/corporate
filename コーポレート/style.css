@@ -1,0 +1,574 @@
+@charset UTF-8: * {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+body, html, div, p, span, blockquote, u, s, i, b, table, tr, th, td, ul, ol, dl, li, dt, dd, strong, h1, h2, h3, h4, h5, header, footer, nav, aside, section, input, select, option, textarea {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  color: inherit;
+}
+body {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  line-height: 1.6;
+  color: #000;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+  vertical-align: middle;
+}
+ul, ol {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  transition-property: all;
+  transition: 0.3s linear;
+  color:black;
+}
+table {
+  border-collapse: collapse;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Palanquin';
+}
+
+
+/*header*/
+
+/*トグルボタンのスタイルを指定*/
+@media screen and (max-width:768px){
+
+
+/*ナビメニューのスタイルを指定*/
+nav.NavMenu{
+　position: fixed; /*表示位置を固定*/
+　z-index: 2; /*重ね順を変更*/
+　top: 0; /*表示位置を指定*/
+　left: 0; /*表示位置を指定*/
+　background: #fff;/*背景を白にする*/
+　color: #000; /*文字色を黒にする*/
+　text-align: center; /*テキストを中央揃え*/
+　width: 100%; /*全幅表示*/
+　transform: translateY(-100%); /*ナビを上に隠す*/
+　transition: all 0.6s; /*アニメーションの時間を指定*/
+}
+
+nav.NavMenu ul{
+　background: #ccc; /*背景をグレーにする*/
+　width: 100%;
+　margin: 0 auto;
+　padding: 0;
+}
+
+nav.NavMenu ul li{
+　font-size: 1.1em;
+　list-style-type: none;
+　padding: 0;
+　width: 100%;
+　border-bottom: 1px dotted #333;
+}
+
+nav.NavMenu ul li:last-child{
+　padding-bottom: 0;
+　border-bottom: none; /*最後のメニュー項目のみ下線を消す*/
+}
+
+nav.NavMenu ul li a{
+　display: block; /*クリックできる領域を広げる*/
+　color: #000;
+　padding: 1em 0;
+}
+
+.Toggle {
+    display: block;
+    position:absolute;
+  /* bodyに対しての絶対位置指定 */
+    right: 30px;
+    top: 25px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    z-index: 3;
+}
+ 
+.Toggle span {
+    display: block;
+    position: absolute;
+    width: 35px;
+    border-bottom: solid 3px #000;
+    -webkit-transition: .35s ease-in-out; /*変化の速度を指定*/
+    -moz-transition: .35s ease-in-out;    /*変化の速度を指定*/
+    transition: .35s ease-in-out;     /*変化の速度を指定*/
+    left: 6px;
+}
+ 
+.Toggle span:nth-child(1) {
+    top: 9px;
+}
+ 
+.Toggle span:nth-child(2) {
+    top: 18px;
+}
+ 
+.Toggle span:nth-child(3) {
+    top: 27px;
+}
+ 
+/* 最初のspanをマイナス45度に */
+.Toggle.active span:nth-child(1) {
+    top: 18px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+ 
+/* 2番目と3番目のspanを45度に */
+.Toggle.active span:nth-child(2),
+.Toggle.active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*トグルボタンが押されたときに付与するクラス*/
+nav.NavMenu.active{
+　transform: translateY(0%);
+}
+}
+
+
+
+.title {
+  text-align: center;
+  font-family: 'Patua One', cursive;
+}
+
+
+.navi {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navi li:hover{
+  color: blue;
+}
+
+li {
+  display: inline-block;
+  font-family: 'Palanquin';
+  color:black;
+}
+
+
+.list {
+  margin: 0px 0px 10px 15px;
+  font-size: 15px;
+}
+
+.logo{
+  height: 35px;
+}
+
+.navi li:hover img {
+  opacity: .5;
+}
+
+.contact {
+  padding-bottom: 15px;
+  color: #0000FF;
+}
+
+@media screen and (max-width:768px){
+li {
+    display: none;
+     }
+}
+
+@media screen and (max-width:768px){
+.logo {
+    padding: 10px;
+     }
+}
+
+/*main*/
+
+.main {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
+.main1 {
+  width: 1500px;
+  height: 550px;
+}
+.main2 {
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 3%;
+  font-size: 40px;
+}
+.main3 {
+  position: absolute;
+  color: white;
+  top: 30%;
+  left: 5%;
+  font-size: 40px;
+}
+.main4 {
+  position: absolute;
+  color: white;
+  top: 40%;
+  left: 15%;
+  font-size: 40px;
+}
+.main5 {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 13%;
+  font-size: 40px;
+}
+.main6 {
+  position: absolute;
+  color: white;
+  top: 70%;
+  left: 8%;
+  font-size: 40px;
+}
+
+/*NEWS*/
+.news,.introduction1,.message{
+  padding-top: 30px;
+}
+
+a:hover{
+  color: blue;
+}
+
+@media screen and (max-width:768px){
+.main1 {
+    width: 450px;
+    margin: 0 auto;
+    padding-left: 1%;
+     }
+}
+
+
+/*製品紹介*/
+
+article{
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+figure{
+  height: 400px;
+  width: 800px;
+}
+
+
+
+.sns,.google{
+  padding-top: 30px;
+  text-align : center ;
+}
+
+
+.btn {
+  border: 1px solid green;
+  border-radius: 5px;
+  background-color: #1d2088;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  width: 100px;
+  margin-right:20px;
+  box-sizing: content-box;
+}
+
+
+.intro{
+  padding-top: 20px;
+}
+
+@media screen and (max-width:768px){
+article {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+         }
+}
+
+@media screen and (max-width:768px){
+figure {
+    display: none;
+     }
+}
+
+
+@media screen and (max-width:768px){
+.btn {
+    margin: 0 auto;
+     }
+}
+
+@media screen and (max-width:768px){
+.sns {
+    padding-right: 5%;
+     }
+}
+
+/*導入事例*/
+
+.example2 {
+display: flex;
+margin: 0 auto;
+width: 1200px;
+}
+
+.square {
+  width: 620px;
+  height: 400px;
+  background: #7287cc;
+  margin-top: 10px;
+  position:relative;
+}
+.img1 {
+  width: 500px;
+  height: 400px;
+}
+.ex1 {
+  position:absolute;
+  color: white;
+  top: 8%;
+  left: 20%;
+  font-size:35px;
+}
+.ex2 {
+  position:absolute;
+  color: black;
+  top: 23%;
+  left: 30%;
+  font-size:20px;
+}
+.ex3 {
+  position:absolute;
+  color: black;
+  top: 33%;
+  left: 18%;
+  font-size:20px;
+}
+
+.ex4{
+  position:absolute;
+  color: black;
+  top: 55%;
+  left: 15%;
+  font-size:30px;
+}
+
+.ex5{
+  position:absolute;
+  color: black;
+  top: 70%;
+  left: 15%;
+  font-size:20px;
+}
+
+@media screen and (max-width:768px){
+.example2 {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+     }
+}
+
+@media screen and (max-width:768px){
+.img1 {
+  margin: 0 auto;
+  width: 430px;
+  padding-bottom: 10px;
+     }
+}
+
+@media screen and (max-width:768px){
+.square {
+  margin: 0 auto;
+  width: 430px;
+     }
+}
+
+@media screen and (max-width:768px){
+.square h3 {
+    display: none;
+     }
+}
+
+@media screen and (max-width:768px){
+.ex3 {
+  position:absolute;
+  color: black;
+  top: 33%;
+  left: 7%;
+  font-size:20px;
+}
+}
+
+@media screen and (max-width:768px){
+.ex4 {
+  position:absolute;
+  color: black;
+  top: 55%;
+  left: 30%;
+  font-size:30px;
+}
+}
+
+@media screen and (max-width:768px){
+.ex5 {
+  position:absolute;
+  color: black;
+  top: 75%;
+  left: 5%;
+  font-size:19px;
+}
+}
+
+@media screen and (max-width:768px){
+.example2 {
+    display: flex;
+    flex-direction: column;
+     }
+}
+
+@media screen and (max-width:768px){
+.square .ex2 {
+  position:absolute;
+  top: 8%;
+  left: 20%;
+  font-size:25px;
+     }
+}
+
+/*message*/
+
+.mes{
+  font-size:20px;
+}
+
+.messe p{
+  text-align:center;
+}
+
+.mess {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+.ceo {
+  width: 600px;
+  height: 380px;
+}
+.ceo1 {
+  margin: 50px 0px 100px 100px;
+}
+
+@media screen and (max-width:768px){
+.mess{
+    display: flex;
+    margin: 0 auto;
+    width: 430px;
+    flex-wrap: wrap;
+     }
+}
+
+@media screen and (max-width:768px){
+.ceo1 {
+    margin: 20px;
+     }
+}
+
+@media screen and (max-width:768px){
+.ceo {
+      margin:0 auto;
+      width: 430px;
+      height: 350px;
+     }
+}
+
+
+/*footer*/
+
+
+footer {
+  display: flex;
+  width: 100%;
+  background-color: #cdecf9;
+  margin-top: 2%;
+}
+
+.container {
+  display: flex;
+  height: 100px;
+  margin: 0 auto;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+address{
+   font-family: inherit;
+   font-style:normal;
+}
+
+.sp2 p{
+  color:black;
+}
+
+
+.container .sp2 p:hover{
+  color: blue;
+}
+
+.logo1 {
+  height: 35px;
+}
+
+@media screen and (max-width:768px){
+.container {
+  width:80%;
+     }
+}
+
+@media screen and (max-width:768px){
+.logo1 {
+  height: 30px;
+     }
+}
